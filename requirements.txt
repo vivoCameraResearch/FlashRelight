@@ -1,0 +1,39 @@
+# FlashRelight inference requirements.
+#
+# Install PyTorch first, matching your CUDA runtime, e.g.
+#   pip install torch==2.1.0 torchvision==0.16.0 --index-url https://download.pytorch.org/whl/cu121
+# then
+#   pip install -r requirements.txt
+#
+# FlashAttention is optional. PyTorch SDPA is the fallback.
+
+torch>=2.1.0
+torchvision>=0.16.0
+
+# only ConfigMixin / ModelMixin / SchedulerMixin are used
+diffusers==0.31.0
+# umT5-XXL tokenizer + the optional BiRefNet matting model
+transformers==4.46.3
+tokenizers==0.20.3
+huggingface_hub==0.36.2
+accelerate>=0.25.0
+safetensors>=0.4.0
+einops>=0.7.0
+ftfy>=6.1.0
+sentencepiece>=0.1.99
+regex
+
+numpy==1.26.3
+opencv-python-headless>=4.8.0,<4.12   # also provides the OpenEXR decoder
+imageio>=2.31.0
+imageio-ffmpeg>=0.4.9           # bundles an H.264 encoder
+pillow>=10.0.0
+tqdm
+
+# web demo (app.py) only
+gradio==5.22.0
+
+# optional: BiRefNet-portrait matting for in-the-wild clips
+# (safe to skip if you always pass --matting none)
+timm>=0.9.0
+kornia>=0.7.0

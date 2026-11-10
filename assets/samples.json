@@ -1,0 +1,37 @@
+[
+  {
+    "id": "great_circle",
+    "mode": "env",
+    "source": "sources/generated_gesture.mp4",
+    "env_map": "envmaps/04_random_great_circle",
+    "env_scale": 0.1,
+    "seed": 1,
+    "matting": "none"
+  },
+  {
+    "id": "rotating_meadow",
+    "mode": "env",
+    "source": "sources/generated_portrait.mp4",
+    "env_map": "envmaps/meadow_2_4k.exr",
+    "env_scale": 0.1,
+    "env_rotation_speed": 60,
+    "seed": 1,
+    "matting": "none"
+  },
+  {
+    "id": "dappled_light",
+    "mode": "text",
+    "source": "sources/generated_portrait.mp4",
+    "prompt": "Across the face, irregular dappled light patches wander with an organic motion.",
+    "seed": 1,
+    "matting": "none"
+  },
+  {
+    "id": "studio_sweep",
+    "mode": "light_ref",
+    "source": "sources/generated_gesture.mp4",
+    "light_ref": "light_refs/studio_sweep.mp4",
+    "seed": 1,
+    "matting": "none"
+  }
+]

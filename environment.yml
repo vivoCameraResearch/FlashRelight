@@ -1,0 +1,42 @@
+# FlashRelight - inference environment (validated end to end)
+#
+#   conda env create -f environment.yml
+#   conda activate flashrelight
+#
+# Validated on: Linux x86_64, NVIDIA H20 (CUDA 12.2 driver), Python 3.10,
+# PyTorch 2.1.0+cu121, diffusers 0.31.0, transformers 4.46.3, gradio 5.22.0.
+# FlashAttention is optional. PyTorch SDPA is the fallback.
+name: flashrelight
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      # ---- core: CUDA wheel must match your driver (cu121 or cu118) --
+      - --extra-index-url https://download.pytorch.org/whl/cu121
+      - torch==2.1.0
+      - torchvision==0.16.0
+      # ---- model code ------------------------------------------------------
+      - diffusers==0.31.0          # ConfigMixin / ModelMixin / SchedulerMixin
+      - transformers==4.46.3       # umT5 tokenizer (+ optional BiRefNet)
+      - tokenizers==0.20.3
+      - huggingface_hub==0.36.2
+      - accelerate>=0.25
+      - safetensors>=0.4
+      - einops>=0.7
+      - ftfy>=6.1                  # text cleanup for the umT5 tokenizer
+      - sentencepiece>=0.1.99
+      - regex
+      # ---- io --------------------------------------------------------------
+      - numpy==1.26.3
+      - opencv-python-headless>=4.8,<4.12   # ships the OpenEXR decoder for env maps
+      - imageio>=2.31
+      - imageio-ffmpeg>=0.4.9         # bundles an H.264 encoder
+      - pillow>=10.0
+      - tqdm
+      # ---- optional: BiRefNet-portrait matting (in-the-wild inputs) --------
+      - timm>=0.9.0
+      - kornia>=0.7.0
+      # ---- demo ------------------------------------------------------------
+      - gradio==5.22.0

@@ -1,0 +1,12 @@
+metric: solid-angle weighted mean luminance (lat-long)
+ref_p: 90.0
+mix_alpha: 0.25
+E_ref(p90.0): 2.049069547653e+00
+E_peak(max): 2.974496364594e+00
+E_anchor(linear_mix): 2.280426251888e+00
+target_energy(median_real): 6.447055637836e-01
+scale_cont: 2.827127442729e-01
+scale_levels: (0.05, 0.1, 0.2, 0.5, 1.0, 2.0, 5.0, 10.0, 20.0)
+scale_quantized: 5.000000000000e-01
+scale_clip: (0.01, 50.0)
+scene_seed: 12777

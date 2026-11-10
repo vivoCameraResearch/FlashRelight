@@ -1,0 +1,33 @@
+# weights are distributed separately (see README §2)
+weights/*
+!weights/README.md
+*.pt
+*.pth
+*.safetensors
+
+# outputs
+outputs/
+results/
+*.mp4.tmp
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# tooling / editors
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.cache/
+
+# gradio
+gradio_cached_examples/
+flagged/
