@@ -13,7 +13,7 @@ weights/
 └── BiRefNet-portrait/            # optional, for portrait matting
 ```
 
-Full relighting uses both project checkpoints and the shared Wan2.1 configuration, VAE, text encoder, and tokenizer. [FlashRelight checkpoints](https://huggingface.co/JiahuiSheng/FlashRelight) · [Wan2.1 base files](https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B)
+Full relighting uses both project checkpoints and the shared Wan2.1 configuration, VAE, text encoder, and tokenizer. The default setup retrieves the configuration and stage checkpoints from FlashRelight, and the VAE, text encoder, and tokenizer from Wan2.1. [FlashRelight checkpoints](https://huggingface.co/JiahuiSheng/FlashRelight) · [Wan2.1 base files](https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B)
 
 ```bash
 python scripts/download_weights.py --dest weights --skip_matting_model

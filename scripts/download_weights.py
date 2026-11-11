@@ -137,6 +137,8 @@ def main() -> None:
         for rel in WAN_FILES:
             place(str(Path(args.wan_dir) / rel), dest / rel, args.link)
     else:
+        if FLASHRELIGHT_REPO == "JiahuiSheng/FlashRelight":
+            hf_download(FLASHRELIGHT_REPO, dest, ["config.json"])
         hf_download(WAN_REPO, dest, WAN_FILES)
 
     print("\n[2/3] FlashRelight stage checkpoints")
